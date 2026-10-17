@@ -115,7 +115,7 @@ opencode.jsonc
 # These are point-in-time working audits produced while preparing this
 # repository. They are machine-generated process records, not product
 # documentation: every finding in them has since been resolved, and the durable
-# conclusions live in README.md, ROADMAP.md and docs/.
+# conclusions live in README.md and docs/.
 #
 # GITHUB_READINESS_REPORT.md additionally contains the operator's real Tailscale
 # addresses, MagicDNS hostname, tailnet name and Windows account name. It must
@@ -150,7 +150,7 @@ Desktop.ini
 #                          the project's value, not disposable tooling.
 #   app/src/**             All production source, assets and the JUnit suite.
 #   docs/*.md              Curated, sanitized verification evidence.
-#   ROADMAP.md, README.md  Project documentation.
+#   README.md              Project documentation.
 #   app/src/main/res/raw/  The alarm tone is a source asset, not an artifact.
 #   AGENTS.md, CLAUDE.md   IF these are ever added as committed contributor
 #                          guidance, track them. Only the .local.md per-machine

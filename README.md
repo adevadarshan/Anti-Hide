@@ -387,5 +387,4 @@ app/
   src/test/java/               103 JVM tests
 scripts/       manual real-device verification harnesses (PowerShell)
 docs/          curated verification and test-result records
-ROADMAP.md     architecture evaluation and the design decisions behind this release
 ```
