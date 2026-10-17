@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AntiHide V2</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header id="banner" class="banner booting">
+    <div class="banner-main">
+      <span id="status" class="status">BOOTING</span>
+      <span id="heartbeat-age" class="banner-detail">Heartbeat —</span>
+      <span id="latency" class="banner-detail">Latency —</span>
+    </div>
+    <div id="retry-note" class="banner-detail hidden"></div>
+  </header>
+
+  <div id="update-banner" class="update hidden">
+    <span id="update-text">App updated on phone.</span>
+    <button id="reload-button" type="button">Reload dashboard</button>
+  </div>
+
+  <main>
+    <section id="alarm-card" class="card idle">
+      <h2>Alarm</h2>
+      <p id="alarm-state" class="alarm-state">IDLE</p>
+      <p id="ring-timer" class="timer">&mdash;</p>
+      <p class="row">
+        <span class="label">stateVersion</span><span id="state-version">—</span>
+        <span class="label">last stop</span><span id="last-stop">—</span>
+      </p>
+      <div class="actions">
+        <button id="ring-button" type="button" class="danger">RING PHONE</button>
+        <button id="stop-button" type="button" class="stop">STOP ALARM</button>
+      </div>
+      <p id="alarm-result" class="result"></p>
+    </section>
+
+    <section id="pair-card" class="card hidden">
+      <h2>Pair this origin</h2>
+      <p class="hint">Open a 120 second pairing window on the phone, then enter the 8 character code.</p>
+      <input id="pair-code" type="text" maxlength="9" placeholder="XXXX-XXXX"
+             autocomplete="off" autocapitalize="characters" spellcheck="false" />
+      <button id="pair-button" type="button">Pair</button>
+      <p id="pair-result" class="result"></p>
+    </section>
+
+    <details id="diagnostics" class="card">
+      <summary>Diagnostics</summary>
+      <div class="grid">
+        <span class="label">transport</span><span id="d-transport">—</span>
+        <span class="label">stateVersion</span><span id="d-version">—</span>
+        <span class="label">serverBootId</span><span id="d-boot">—</span>
+        <span class="label">lastStopSource</span><span id="d-stop">—</span>
+        <span class="label">last HTTP</span><span id="d-http">—</span>
+        <span class="label">latency</span><span id="d-latency">—</span>
+        <span class="label">SSE frames</span><span id="sse-frames">0</span>
+        <span class="label">heartbeats</span><span id="heartbeats">0</span>
+        <span class="label">page boots</span><span id="boot-count">—</span>
+        <span class="label">appVersion</span><span id="d-appversion">—</span>
+      </div>
+      <div class="actions">
+        <button id="diag-button" type="button">Refresh Server Diagnostics</button>
+        <button id="echo-button" type="button">Send Echo Command</button>
+        <button id="harness-button" type="button">Run 25x Reconnect Harness</button>
+        <button id="dup-button" type="button">Duplicate RING test (same commandId x3)</button>
+      </div>
+      <p id="command-result" class="result"></p>
+      <h3>Server log (sanitized)</h3>
+      <ol id="server-log" class="server-log"></ol>
+    </details>
+
+    <details class="card">
+      <summary>Event log</summary>
+      <ol id="log"></ol>
+    </details>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
